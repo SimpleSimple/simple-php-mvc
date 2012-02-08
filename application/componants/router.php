@@ -15,10 +15,10 @@
     
      public static function route (Request $request)
      {    
-         $controllerName   = $request->getController ().'Controller';
+         $controllerName   = $request->getController ();
          $methods          = $request->getAction ();
          $arguments        = $request->getArgs ();
-         $controllLocation = CONTROLLERS.strtolower($controllerName).'.php';
+         $controllLocation = LIBRARYS.strtolower($controllerName).'.php';
     
          if (!is_readable ($controllLocation))
          {   
@@ -38,7 +38,7 @@
              echo 'class not found';
              return false; //transfer to 404 later
          }
-        // echo '<pre>'.print_r ($arguments, 1).'</pre>';
+         
          call_user_func_array (array ($controllerName, $methods), $arguments);
      }   
  }

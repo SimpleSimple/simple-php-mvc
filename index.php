@@ -28,6 +28,6 @@
         //set controller's error
    }
 
-   //echo getIncludedFiles ();
+   echo getIncludedFiles ();
    unregisterGlobals ();
    removeMagicQuotes ();

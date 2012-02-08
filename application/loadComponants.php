@@ -7,7 +7,6 @@
      
      public function Componants ($className)
      {
-         //echo $className .'<br />';
          if (is_readable(COMPONANTS.strtolower($className).'.php'))
          {
              require_once COMPONANTS.strtolower($className).'.php';
@@ -18,9 +17,9 @@
      
      public function Controllers ($className)
      {
-         if (is_readable(CONTROLLERS.strtolower($className).'.php'))
+         if (is_readable(LIBRARYS.strtolower($className).'.php'))
          {
-             require_once CONTROLLERS.strtolower($className).'.php';
+             require_once LIBRARYS.strtolower($className).'.php';
          }
  
          return false;         
@@ -32,7 +31,6 @@
          spl_autoload_extensions ('.php, .class.php'); //hmm
          spl_autoload_register (array ($this, 'Componants'));
          spl_autoload_register (array ($this, 'Controllers'));
-         echo $clasName;
      }
      
      public function showLoadedComponants ()

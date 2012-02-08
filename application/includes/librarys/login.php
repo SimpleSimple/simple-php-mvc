@@ -10,12 +10,10 @@
  *
  * @author Administrator
  */
- class loginController extends mainController 
+ class login extends mainController 
  {
      public function mainIndex() 
      {  
-        // $_Args = func_get_args();
-
          $params = security::getInstance ()->cleanHTTPVars ();
          
          echo '<pre>'.print_r ($params, 1). '</pre>';
