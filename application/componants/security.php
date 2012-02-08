@@ -30,6 +30,7 @@
      {
            $v = !empty ($var)?$var:array (
                          "_post" => $_POST, "_get" => $_GET, "_session" => $_SESSION);
+           
            $this->_params ['raw'] = $v;
            
            foreach ($v as $key => $value)

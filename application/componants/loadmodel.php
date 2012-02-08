@@ -12,6 +12,8 @@
  */
  class loadModel 
  {
+     public static $_instance;
+     
      public function models ($model)
      {
          $modelClass = $model.'model';
@@ -30,5 +32,14 @@
              
              return false;
          }
+     }
+     
+     public static function getInstance ()
+     {
+         if (!(self::$_instance instanceof self))
+         {
+               self::$_instance = new loadModel;
+         }
+         return self::$_instance;
      }
  }

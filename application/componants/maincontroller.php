@@ -20,9 +20,9 @@
      
      public function __construct() 
      {
-         $this->_registry = Registry::getInstance ();
-         $this->_template = template::getInstance ();
-         $this->_loadreg  = new loadModel ();
+         $this->_registry   = Registry::getInstance ();
+         $this->_template   = template::getInstance ();
+         $this->_loadreg    = loadModel::getInstance ();
      }
      
      public function __get ($key)
